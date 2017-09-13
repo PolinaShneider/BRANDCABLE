@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="src/css/main.css">
+</head>
+<body>
+	<div class="header__drawer js-header__drawer">
+        <nav class="header__drawer-nav ">
+        	<a class="menu-link">
+        		<i class="fa fa-shopping-bag"></i>
+        		BAG
+        	</a>
+        	<a class="menu-link">
+        		<i class="fa fa-heart"></i>
+        		LOVE BOX
+        	</a>
+        	<a class="menu-link">
+        		<i class="fa fa-user"></i>
+        		ACCOUNT
+        	</a>
+        	<a class="menu-link">
+        		<i class="fa fa-search"></i>
+        		SEARCH
+        	</a>
+        </nav>
+    </div>
+	<div class="main-content--mobile">
+		<header class="header">
+			<div class="header__upper">
+				<div class="header__container">
+					<div class="header__menu-mobile js-header__menu-mobile">
+			            <i class="fa fa-bars"></i>
+			        </div>
+			        <div class="header__branding-text"><a href="./index.html">BRAND CABLE</a></div>
+			        <div class="header__motto">Прямой доступ к потребителям и брендам</div>
+			        <div class="header__login">
+			        	<a href="./login.html"><span>Регистрация</span> / <span>Вход</span> </a>
+			        </div>
+		    	</div>
+	    	</div>
+    	</header>
+    	<div class="tabs-container">
+			<div class="tab">
+				<button class="tablinks" onclick="openTab(event, 'login')">Login</button>
+				<button id="defaultOpen" class="tablinks" onclick="openTab(event, 'signUp')">Sign Up</button>
+			</div>
+
+			<div class="inputs-wrapper">
+
+				<div id="login" class="tabcontent">
+					<input class="form-input" type="" name="" placeholder="Your email address">
+					<input class="form-input" type="" name="" placeholder="Password">
+					<div class="form-button form-button--cta">LOGIN WITH EMAIL</div><br>
+					<div class="form-button">FORGOT PASSWORD?</div>
+				</div>
+
+				<div id="signUp" class="tabcontent">
+					<input class="form-input" type="" name="" placeholder="First and last name">
+					<input class="form-input" type="" name="" placeholder="Your email address">
+					<input class="form-input" type="" name="" placeholder="Password">
+					<div class="form-button form-button--cta">CREATE NEW ACCOUNT</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="src/js/main.js"></script>
+	<script type="text/javascript" src="src/js/tabs.js"></script>
+</body>
+</html>
