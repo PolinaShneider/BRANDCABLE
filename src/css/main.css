@@ -406,7 +406,7 @@ div.tab button.active {
     cursor: pointer;
 }
 .slide-section__item.current {
-    top: 36px;
+    top: 50px;
 }
 .slide-section__item#first {
     background: url(../../img/food.jpg) no-repeat;
@@ -701,6 +701,15 @@ div.tab button.active {
     .nav__ul-li--search input {
         text-align: center;
         width: 75px;
+    }
+    .slide-section__item > span {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 10px;
+        transform: none;
+        opacity: 0.75;
     }
 
 }
