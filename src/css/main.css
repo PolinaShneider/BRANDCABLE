@@ -16,12 +16,16 @@ a {
 /**
  * Pushing menu styles
  */
+.main-content--mobile {
+    left: 0;
+}
 .js-main-content-mobile--move {
     position: relative;
     left: 220px;
 }
-.main-content--mobile {
-    right: 0 !important;
+.js-main-content-mobile--move .header,
+.js-main-content-mobile--move .nav--fixed {
+    left: inherit;
 }
 .header__drawer {
     -webkit-transform: translateZ(0);
@@ -86,6 +90,7 @@ a {
     box-sizing: border-box;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -499,6 +504,7 @@ div.tab button.active {
 .nav--fixed {
     position: fixed;
     top: 50px;
+    left: 0;
     background: #fff;
     width: 100%;
 }

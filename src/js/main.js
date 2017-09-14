@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
 	 */
 	var mobileMenu = function(boolean) {
 	    $(".js-header-upper__logo-mobile").toggleClass("hide", boolean);
-	    $(".main-content--mobile").toggleClass("js-main-content-mobile--move");
+	    $(".main-content--mobile").toggleClass("js-main-content-mobile--move", boolean);
 	    $(".js-header__drawer").toggleClass("is-visible", boolean);
 	};
 
@@ -24,16 +24,16 @@ jQuery(document).ready(function($){
 
 	});
 
-	// $(document).mouseup(function(e) {
-	//     var activator = $(".js-header__menu-mobile");
-	//     var main = $(".js-main-content-mobile");
-	//     var container = $(".js-header__drawer");
-	//     var condition = activator.is(e.target) || activator.has(e.target).length;
-	//     var inside = container.is(e.target) || container.has(e.target).length;
-	//     if (!condition && main.has(e.target).length === 0 && !inside)
-	//     {
-	//         mobileMenu(false);
-	//     }
-	// });
+	$(document).mouseup(function(e) {
+	    var activator = $(".js-header__menu-mobile");
+	    var main = $(".js-main-content-mobile");
+	    var container = $(".js-header__drawer");
+	    var condition = activator.is(e.target) || activator.has(e.target).length;
+	    var inside = container.is(e.target) || container.has(e.target).length;
+	    if (!condition && main.has(e.target).length === 0 && !inside)
+	    {
+	        mobileMenu(false);
+	    }
+	});
 
 });
