@@ -679,6 +679,7 @@ div.tab button.active {
         text-align: center;
         font-size: 18px;
         margin-bottom: 20px;
+        line-height: 1.25em;
     }
     .footer__section-ul:not(:first-of-type) {
         display: none;
