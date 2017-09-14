@@ -27,9 +27,6 @@ a {
 .js-main-content-mobile--move .nav--fixed {
     left: auto;
 }
-.js-main-content-mobile--move .header__branding-text {
-    margin-left: -180px !important;
-}
 .header__drawer {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
