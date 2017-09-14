@@ -400,13 +400,17 @@ div.tab button.active {
     display: inline-block;
     opacity: 0.8;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     cursor: pointer;
+    display: none;
 }
 .slide-section__item.current {
     top: 50px;
+}
+.slide-section__item.current > span {
+    display: initial;
 }
 .slide-section__item#first {
     background: url(../../img/food.jpg) no-repeat;
@@ -701,15 +705,6 @@ div.tab button.active {
     .nav__ul-li--search input {
         text-align: center;
         width: 75px;
-    }
-    .slide-section__item > span {
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin: 10px;
-        transform: none;
-        opacity: 0.75;
     }
 
 }
