@@ -21,7 +21,7 @@ a {
     left: 220px;
 }
 .main-content--mobile {
-    right: 0;
+    right: 0 !important;
 }
 .header__drawer {
     -webkit-transform: translateZ(0);
