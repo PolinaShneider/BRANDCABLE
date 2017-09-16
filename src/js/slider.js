@@ -107,6 +107,10 @@
         for (var i = 0; i < slides.length; i++) {
             slides[i].style.width = step + "px";
         }
+
+        index = parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step + 1;
+        currentSlide = document.querySelectorAll(".slide")[index];
+        prevSlide = document.querySelectorAll(".slide")[index - 1];
     });
 
     var ctrlLeft = document.querySelector(".ctrl-left");
