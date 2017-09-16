@@ -99,6 +99,16 @@
         }();
     }, 3000); // setInterval
 
+     $(window).on('resize', function () {
+
+        slides = document.querySelectorAll(".slide");
+        step = parseInt(window.getComputedStyle(container, null).getPropertyValue("width"));
+
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.width = step + "px";
+        }
+    });
+
     var ctrlLeft = document.querySelector(".ctrl-left");
     ctrlLeft.addEventListener("click", slideLeft);
 

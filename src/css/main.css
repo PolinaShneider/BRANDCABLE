@@ -172,13 +172,14 @@ a {
  * SLIDER Styles
  */
 .container {
-    width: 600px;
     height: 400px;
+    min-width: 100%;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
     border-radius: 5px;
     top: 80px;
+    margin-top: 180px;
 }
 .wrapper {
     width: 9999px;
@@ -188,14 +189,18 @@ a {
     right: 0;
 }
 .slide {
-    width: 600px;
-    height: 400px;
+    width: inherit;
+    height: 600px;
     float: left;
     display: flex;
     position: relative;
     overflow: hidden;
     opacity: 0.85;
     transition: none;
+}
+.slide img {
+    object-fit: cover;
+    object-position: 100% 50%;
 }
 .ctrl-left, .ctrl-right {
     position: absolute;
@@ -496,10 +501,37 @@ div.tab button.active {
     border-color: #353535;
 }
 .hipster-girl-bg {
-    height: 500px;
     background: url('../../img/hipster-girl.jpg');
     background-size: cover;
-    background-position-y: -25%;
+    background-position-x: 100%;
+}
+.brown-girl-bg {
+    background: url('../../img/brown.jpg');
+    background-size: cover;
+    background-position-y: 55%;
+    background-position-x: 50%;
+}
+.jeans-girl-bg {
+    background: url('../../img/classy-girl.jpg');
+    background-size: cover;
+    background-position-x: 70%;
+}
+.lolli-girl-bg {
+    background: url('../../img/cheerleader.jpg');
+    background-size: cover;
+    background-position-y: 50%;
+    background-position-x: 75%;
+}
+.countryside-girl-bg {
+    background: url('../../img/countryside.jpg');
+    background-size: cover;
+    background-position-y: 70%;
+    background-position-x: 50%;
+}
+.elegant-girl-bg {
+    background: url('../../img/levis.jpg');
+    background-size: cover;
+    background-position-x: 50%;
 }
 .nav--fixed {
     position: fixed;
@@ -507,6 +539,7 @@ div.tab button.active {
     left: 0;
     background: #fff;
     width: 100%;
+    z-index: 5;
 }
 /**
  * Footer
@@ -641,6 +674,7 @@ div.tab button.active {
     }
 	.container  {
 		max-width: 100%;
+        margin-top: 0px;
 	}
 	.slider-text {
 		font-size: 30px;
