@@ -196,7 +196,7 @@ a {
     position: relative;
     overflow: hidden;
     opacity: 0.85;
-    transition: none;
+    transition: right 1s ease;;
 }
 .slide img {
     object-fit: cover;

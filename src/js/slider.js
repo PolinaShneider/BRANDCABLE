@@ -34,8 +34,9 @@
         if (parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) <= (slidesCount - 2) * step) {
             newPosRight = parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right"))  + step ;
             wrapper.style.right = round(newPosRight, step)+ "px" ;
-            index = parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step + 1;
+            index = Math.ceil(parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step + 1);
             currentSlide = document.querySelectorAll(".slide")[index];
+            document.querySelectorAll(".slide")[slides.length - 1].setAttribute("current", "false");
             prevSlide = document.querySelectorAll(".slide")[index - 1];
             prevSlide.setAttribute("current", "false");
             currentSlide.setAttribute("current", "true");
@@ -57,7 +58,9 @@
         if (parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) >= step) {
             newPosLeft = parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right"))  - step ;
             wrapper.style.right = round(newPosLeft, step)+ "px" ;
-            index = parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step - 1;
+            index = Math.ceil(parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step - 1);
+            currentSlide = document.querySelectorAll(".slide")[index + 1];
+            currentIndex = currentSlide.getAttribute("number");
             /**
              * Document might not be ready
              * if clicking too fast
@@ -97,7 +100,7 @@
                 }();
             }
         }();
-    }, 3000); // setInterval
+    }, 4000); // setInterval
 
      $(window).on('resize', function () {
 
@@ -108,13 +111,10 @@
             slides[i].style.width = step + "px";
         }
 
-        index = parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step + 1;
-        currentSlide = document.querySelectorAll(".slide")[index];
-        prevSlide = document.querySelectorAll(".slide")[index - 1];
     });
 
-    var ctrlLeft = document.querySelector(".ctrl-left");
-    ctrlLeft.addEventListener("click", slideLeft);
+    // var ctrlLeft = document.querySelector(".ctrl-left");
+    // ctrlLeft.addEventListener("click", slideLeft);
 
-    var ctrlRight = document.querySelector(".ctrl-right");
-    ctrlRight.addEventListener("click", slideRight);
+    // var ctrlRight = document.querySelector(".ctrl-right");
+    // ctrlRight.addEventListener("click", slideRight);
