@@ -129,7 +129,7 @@
                 }();
             }
         }();
-    }, 500); // setInterval
+    }, 4000); // setInterval
 
      $(window).on('resize', function () {
 
