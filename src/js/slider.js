@@ -6,7 +6,7 @@
     var currentSlide = document.querySelectorAll(".slide")[0];
     var currentIndex = document.querySelector('[current="true"]').getAttribute("number");
     var counter = 1;
-    var right;
+    var right, direction;
 
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.width = step + "px";
@@ -83,15 +83,32 @@
         counter = 1;
     };
 
-    var resizeReInit = function() {
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].setAttribute("current", "false");
+    var resizeReInit = function(param) {
+        // for (var i = 0; i < slides.length; i++) {
+        //     slides[i].setAttribute("current", "false");
+        // }
+        if (direction === "Left") {
+            currentIndex = param - 1;
+            currentSlide = document.querySelectorAll(".slide")[currentIndex - 1];
+            right = $(window).width() * --currentIndex;
         }
-        currentSlide = document.querySelectorAll(".slide")[currentIndex];
+        if (direction === "Right") {
+            currentIndex = param;
+            currentSlide = document.querySelectorAll(".slide")[currentIndex - 1];
+            right = $(window).width() * --currentIndex;
+        }
+        if (direction === "Bug") {
+            reInit();
+        }
+        // currentSlide = document.querySelectorAll(".slide")[param - 1];
         currentSlide.setAttribute("current", "true");
         // counter = 1;
-        right = $(window).width() * --currentIndex;
+        // right = $(window).width() * --param;
         wrapper.style.right = (right)+ "px" ;
+        var multipleCurrent = document.querySelectorAll('[current="true"]');
+        if (multipleCurrent.length > 1) {
+            multipleCurrent[multipleCurrent.length - 2].setAttribute("current", "false");
+        }
     }
 
     setInterval(function(currentIndex) {
@@ -112,7 +129,7 @@
                 }();
             }
         }();
-    }, 4000); // setInterval
+    }, 500); // setInterval
 
      $(window).on('resize', function () {
 
@@ -126,7 +143,17 @@
             slides[i].style.width = step + "px";
         }
 
-        resizeReInit(currentIndex);
+        if (currentIndex == slides.length && counter > 1) {
+            resizeReInit(counter);
+            direction = "Left";
+        }
+        if (currentIndex < slides.length && counter == 1) {
+            resizeReInit(currentIndex);
+            direction = "Right";
+        }
+        if (currentIndex == slides.length && counter > 1) {
+            direction = "Bug";
+        }
 
     });
 
