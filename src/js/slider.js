@@ -6,6 +6,7 @@
     var currentSlide = document.querySelectorAll(".slide")[0];
     var currentIndex = document.querySelector('[current="true"]').getAttribute("number");
     var counter = 1;
+    var right;
 
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.width = step + "px";
@@ -86,13 +87,11 @@
         for (var i = 0; i < slides.length; i++) {
             slides[i].setAttribute("current", "false");
         }
-        currentSlide = document.querySelectorAll(".slide")[index];
+        currentSlide = document.querySelectorAll(".slide")[currentIndex];
         currentSlide.setAttribute("current", "true");
-        counter = 1;
-        document.querySelector(".wrapper").classList.add("wrapperRight");
-        setTimeout(function() {
-            document.querySelector(".wrapper").classList.remove("wrapperRight");
-        }, 1500)
+        // counter = 1;
+        right = $(window).width() * --currentIndex;
+        wrapper.style.right = (right)+ "px" ;
     }
 
     setInterval(function(currentIndex) {
@@ -117,6 +116,8 @@
 
      $(window).on('resize', function () {
 
+        currentIndex = document.querySelector('[current="true"]').getAttribute("number");
+
         slides = document.querySelectorAll(".slide");
         step = parseInt(window.getComputedStyle(container, null).getPropertyValue("width"));
         index = Math.ceil(parseInt(window.getComputedStyle(wrapper, null).getPropertyValue("right")) / step - 1);
@@ -124,8 +125,8 @@
         for (var i = 0; i < slides.length; i++) {
             slides[i].style.width = step + "px";
         }
-        index = 0;
-        resizeReInit(index);
+
+        resizeReInit(currentIndex);
 
     });
 

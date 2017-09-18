@@ -188,9 +188,6 @@ a {
     transition: right 350ms linear;
     right: 0;
 }
-.wrapperRight {
-    right: 0 !important;
-}
 .slide {
     width: inherit;
     height: 600px;
