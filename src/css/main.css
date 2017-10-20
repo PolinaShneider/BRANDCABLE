@@ -771,7 +771,6 @@ div.tab button.active {
  * Mobile styles
  */
 @media (max-width: 1100px) {
-    
     .nav__ul-contents {
         justify-content: unset;
         max-width: 940px;

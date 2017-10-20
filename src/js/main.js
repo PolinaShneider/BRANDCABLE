@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
 
 
 
-	$(".js-nav__ul-li").hover(function(){
+	$(".js-nav__ul-li").click(function(){
 		if ($(window).width() > 900) {
 			$(this).toggleClass("hovered", true);
 			$( ".nav__ul-contents" ).empty();
